@@ -1,0 +1,26 @@
+[Unit]
+Description=Magocoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=magocoin
+Group=magocoin
+
+Type=forking
+PIDFile=/var/lib/magocoind/magocoind.pid
+
+ExecStart=/usr/bin/magocoind -daemon -pid=/var/lib/magocoind/magocoind.pid \
+          -conf=/etc/magocoin/magocoin.conf -datadir=/var/lib/magocoind
+
+ExecStop=-/usr/bin/magocoin-cli -conf=/etc/magocoin/magocoin.conf \
+         -datadir=/var/lib/magocoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

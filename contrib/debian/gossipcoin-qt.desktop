@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Magocoin
+Comment=Magocoin P2P Cryptocurrency
+Comment[fr]=Magocoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Magocoin, eşten eşe kriptografik sanal para birimi
+Exec=magocoin-qt %u
+Terminal=false
+Type=Application
+Icon=magocoin128
+MimeType=x-scheme-handler/magocoin;
+Categories=Office;Finance;
