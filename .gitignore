@@ -78,11 +78,7 @@ src/qt/test/moc*.cpp
 *.lo
 *.la
 
-# Compilation and Qt preprocessor part
-*.qm
-Makefile
-magocoin-qt
-magocoin-Qt.app
+
 
 # Unit-tests
 Makefile.test
@@ -92,8 +88,6 @@ src/test/buildenv.py
 # Resources cpp
 qrc_*.cpp
 
-# Qt creator
-*.pro.user
 
 # Mac specific
 .DS_Store
