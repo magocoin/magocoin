@@ -13,43 +13,6 @@ src/magocoin-tx
 src/test/test_magocoin
 src/qt/test/test_magocoin-qt
 
-# autoreconf
-aclocal.m4
-autom4te.cache/
-build-aux/config.guess
-build-aux/config.sub
-build-aux/depcomp
-build-aux/install-sh
-build-aux/ltmain.sh
-build-aux/m4/libtool.m4
-build-aux/m4/lt~obsolete.m4
-build-aux/m4/ltoptions.m4
-build-aux/m4/ltsugar.m4
-build-aux/m4/ltversion.m4
-build-aux/missing
-build-aux/compile
-build-aux/test-driver
-config.log
-config.status
-configure
-confdefs.h
-conftest.cpp
-conftest.err
-libtool
-src/config/magocoin-config.h
-src/config/magocoin-config.h.in
-src/config/stamp-h1
-share/setup.nsi
-share/qt/Info.plist
-contrib/devtools/split-debug.sh
-
-src/univalue/gen
-
-src/qt/*.moc
-src/qt/moc_*.cpp
-src/qt/forms/ui_*.h
-
-src/qt/test/moc*.cpp
 
 .deps
 .dirstamp
@@ -116,8 +79,4 @@ qa/pull-tester/test.*/*
 /doc/doxygen/
 /nbproject/
 
-.idea
-CMakeLists.txt
-cmake-build-debug
-config.log
-config.status
+
