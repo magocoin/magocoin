@@ -223,6 +223,9 @@ EXTRA_DIST += \
 EXTRA_DIST += \
     src/crypto/haval_helper.c
 
+EXTRA_DIST += \
+    src/crypto/hamsi_helper.c
+
 CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
 
 .INTERMEDIATE: $(COVERAGE_INFO)
