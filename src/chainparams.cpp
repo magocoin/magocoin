@@ -54,10 +54,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0000009c0f299681e112f5d46a9cdb372923e40ea4acc7cb78b9bf32e4a4c4cd"));
+    (0, uint256("0x0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1536366690, // * UNIX timestamp of last checkpoint block
+    1536611660, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
@@ -141,7 +141,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "New York Times 07/sep/2018 China Threatens New Tariffs on 0 Billion of U.S. Goods";
+        const char* pszTimestamp = "Magocoin ve la luz";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -152,13 +152,42 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1536366690;
+        genesis.nTime = 1536611660;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 3931101;
+        genesis.nNonce = 3941878;
+     /**  if(genesis.GetHash() != uint256("0x"))
+                                     {
+                           printf("Searching for genesis block...\n");
+                           uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+                           uint256 thash;
+
+                           while (true)
+                           {
+                               thash = genesis.GetHash();
+                               if (thash <= hashTarget)
+                                   break;
+                               if ((genesis.nNonce & 0xFFF) == 0)
+                               {
+                                   printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(),hashTarget.ToString().c_str());
+                               }
+                               ++genesis.nNonce;
+                               if (genesis.nNonce == 0)
+                               {
+                                   printf("NONCE WRAPPED, incrementing time\n");
+                                   ++genesis.nTime;
+                               }
+                           }
+                           printf("genesis.nTime = %u \n", genesis.nTime);
+                           printf("genesis.nNonce = %u \n", genesis.nNonce);
+                           printf("genesis.nVersion = %u \n", genesis.nVersion);
+                           //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out an
+                           printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvisedo find merkle root
+
+                       }*/
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000009c0f299681e112f5d46a9cdb372923e40ea4acc7cb78b9bf32e4a4c4cd"));
-        assert(genesis.hashMerkleRoot == uint256("0xc4055096d62c344d794c34184b1c75ecb51181cbc0e626d51f61217159f1cdc2"));
+        assert(hashGenesisBlock == uint256("0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
+        assert(genesis.hashMerkleRoot == uint256("0xf58b81a0f9a9dca6c4a0e7954d80bdfd61e20d5259917945f234b8cc9f1d7c2c"));
 
     		 vSeeds.push_back(CDNSSeedData("seed1.magocoin.net", "149.28.98.168"));             // seed 1
          //vSeeds.push_back(CDNSSeedData("seed2.magocoin.net", "seed2.magocoin.net"));             // seed2
@@ -188,10 +217,10 @@ public:
         //strSporkKey = "0459eede7626441f7802af2736cb3a4aeb3e1f95070cde39d068a4f16525ee8fdd3c075f29f9e115aeb91952239194aa6ac19765574fed8a0d7f174f2b450e9630";
 		    strSporkKey = "03440f6ca649bd3bc2303d38cacdca2d7301bb73ee705e245aab4bb20dbc6a0cdb";
         strObfuscationPoolDummyAddress = "GfLRuhBWpz8N2Hp4t6zEmSKYEqL2dpmsqu";
-        nStartMasternodePayments = 1536366690 + 6000; //Wed, 25 Jun 2014 20:36:16 GMT
+        nStartMasternodePayments = 1536611660 + 6000; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
-        zerocoinModulus = "0xc95577b6dce0049b0a20c779af38079355abadde1a1d80c353f6cb697a7ae5a087bad39caa5798478551d0f9d91e6267716506f32412de1d19d17588765eb9502b85c6a18abdb05791cfd8b734e960281193705eeece210920cc922b3af3ceb178bf12c22eb565d5767fbf19545639be8953c2c38ffad41f3371e4aac750ac2d7bd614b3faabb453081d5d88fdbb803657a980bc93707e4b14233a2358c97763bf28f7c933206071477e8b371f229bc9ce7d6ef0ed7163aa5dfe13bc15f7816348b328fa2c1e69d5c88f7b94cee7829d56d1842d77d7bb8692e9fc7b7db059836500de8d57eb43c345feb58671503b932829112941367996b03871300f25efb5";
+        zerocoinModulus = "0xc95577b6dce0049b0a20c779af38079355abadde1a1d80c353f6cb697a7ae5a087bad39caa5798478551d0f9d91e6267716506f32412de1d19d17588765eb9502b85c6a18abdb05791cfd8b734e960281193705eeece210920cc922b3af3ceb178bf12c22eb565d5767fbf19545639be8953c2c38ffad41f3371e4aac750ac2d7bd614b3faabb453081d5d88fdbb803657a980bc93707e4b14233a2358c97763bf28f7c233206071477e8b371f229bc9ce7d6ef0ed7163aa5dfe13bc15f7816348b328fa2c1e69d5c88f7b94cee7829d56d1842d77d7bb8692e9fc7b7db059836500de8d57eb43c345feb58671503b932829112941367996b03871300f25efb5";
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
         nMinZerocoinMintFee = 1 * ZCENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
