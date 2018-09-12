@@ -57,10 +57,10 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (0, uint256("0x0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1536611660, // * UNIX timestamp of last checkpoint block
-    0,    // * total number of transactions between genesis and last checkpoint
+    //1536611660, // * UNIX timestamp of last checkpoint block
+    //0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    0        // * estimated number of transactions per day after checkpoint
+    //2000        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -125,7 +125,7 @@ public:
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 289;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1536366690; // 7 - aug - 2018
+        nZerocoinStartTime = 1536611660; // 7 - aug - 2018
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -189,7 +189,7 @@ public:
         assert(hashGenesisBlock == uint256("0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
         assert(genesis.hashMerkleRoot == uint256("0xf58b81a0f9a9dca6c4a0e7954d80bdfd61e20d5259917945f234b8cc9f1d7c2c"));
 
-    		 vSeeds.push_back(CDNSSeedData("seed1.magocoin.net", "149.28.98.168"));             // seed 1
+    		// vSeeds.push_back(CDNSSeedData("seed1.magocoin.net", "149.28.98.168"));             // seed 1
          //vSeeds.push_back(CDNSSeedData("seed2.magocoin.net", "seed2.magocoin.net"));             // seed2
          //vSeeds.push_back(CDNSSeedData("chain.magocoin.net", "chain.magocoin.net"));             // explorer
 
