@@ -118,7 +118,7 @@ public:
         nTargetSpacing = 1 * 60;  // Magocoin: 60 Seconds
         nMaturity = 59;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 2000000000 * COIN;
+        nMaxMoneyOut = 30000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 288;
@@ -146,7 +146,7 @@ public:
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 1 * COIN;
+        txNew.vout[0].nValue = 50 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("042292b1f401860eea99e1a8a103effbd7e1c013a59a1a3a0c91c9d1997a0bc6f338567278c11344802838c107055bf7c1641eaed61e879245c255a4f5be5746fc") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
@@ -189,7 +189,7 @@ public:
         assert(hashGenesisBlock == uint256("0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
         assert(genesis.hashMerkleRoot == uint256("0xf58b81a0f9a9dca6c4a0e7954d80bdfd61e20d5259917945f234b8cc9f1d7c2c"));
 
-    		// vSeeds.push_back(CDNSSeedData("seed1.magocoin.net", "149.28.98.168"));             // seed 1
+    		 vSeeds.push_back(CDNSSeedData("149.28.64.95", "149.28.64.95"));             // seed 1
          //vSeeds.push_back(CDNSSeedData("seed2.magocoin.net", "seed2.magocoin.net"));             // seed2
          //vSeeds.push_back(CDNSSeedData("chain.magocoin.net", "chain.magocoin.net"));             // explorer
 
