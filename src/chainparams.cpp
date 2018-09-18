@@ -54,13 +54,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
+    (0, uint256("0x0000067a3c37f579c6757e5869956ee805e9cf3999264eee3397ebb8371c1ec5"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1536611660, // * UNIX timestamp of last checkpoint block
+    1537224730, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    2000        // * estimated number of transactions per day after checkpoint
+    100        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -125,7 +125,7 @@ public:
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 289;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1536611660; // 7 - aug - 2018
+        nZerocoinStartTime = 1537224730; // 17 - sept - 2018
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -152,9 +152,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1536611660;
+        genesis.nTime = 1537224730;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 3941878;
+        genesis.nNonce = 6383846;
      /**  if(genesis.GetHash() != uint256("0x"))
                                      {
                            printf("Searching for genesis block...\n");
@@ -186,8 +186,8 @@ public:
                        }*/
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000a9d061526a2292f52933cd1783a84d581674469016cd1618b044918e46c"));
-        assert(genesis.hashMerkleRoot == uint256("0xf58b81a0f9a9dca6c4a0e7954d80bdfd61e20d5259917945f234b8cc9f1d7c2c"));
+        assert(hashGenesisBlock == uint256("0x0000067a3c37f579c6757e5869956ee805e9cf3999264eee3397ebb8371c1ec5"));
+        assert(genesis.hashMerkleRoot == uint256("0x92f6e413b5450f214e896a32dab91bf85b7fc9cf47fe9751183b20a345a73f76"));
 
     		 vSeeds.push_back(CDNSSeedData("149.28.64.95", "149.28.64.95"));             // seed 1
          //vSeeds.push_back(CDNSSeedData("seed2.magocoin.net", "seed2.magocoin.net"));             // seed2
